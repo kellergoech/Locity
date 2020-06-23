@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- spacing, used as reference for everything else -->
+    <dimen name="spacing_huge">56dp</dimen>
+    <dimen name="spacing_large">48dp</dimen>
+    <dimen name="spacing_medium">32dp</dimen>
+    <dimen name="spacing_normal">24dp</dimen>
+    <dimen name="spacing_small">16dp</dimen>
+    <dimen name="spacing_tiny">8dp</dimen>
+    <dimen name="spacing_mega_tiny">3dp</dimen>
+
+    <!-- header height -->
+    <dimen name="header">56dp</dimen>
+    <dimen name="header_main">40dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="font_button">14sp</dimen>
+
+    <dimen name="match_constraint">0dp</dimen>
+
+    <!-- general -->
+    <dimen name="radius_button">@dimen/spacing_tiny</dimen>
+
+    <!-- default spacing for guidelines -->
+    <dimen name="guideline_card">12dp</dimen>
+    <dimen name="guideline_start">@dimen/spacing_normal</dimen>
+    <dimen name="guideline_end">@dimen/spacing_normal</dimen>
+    <dimen name="guideline_top">@dimen/spacing_normal</dimen>
+    <dimen name="guideline_bottom">@dimen/spacing_small</dimen>
+
+    <!-- button -->
+    <dimen name="button_padding_start_end">@dimen/spacing_normal</dimen>
+    <dimen name="button_padding_top_bottom">@dimen/spacing_small</dimen>
+    <dimen name="button_icon_margin">8dp</dimen>
+</resources>

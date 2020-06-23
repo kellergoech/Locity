@@ -1,26 +1,40 @@
 package de.zw.locity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.parse.Parse
-import com.parse.ParseObject
 
-import de.zw.locity.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private val TAG: String? = MainActivity::class.simpleName
+    }
+
+    private val FragmentManager.currentNavigationFragment: Fragment?
+        get() = primaryNavigationFragment?.childFragmentManager?.fragments?.first()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Parse.initialize(Parse.Configuration.Builder(this)
-                .applicationId(getString(R.string.back4app_app_id)) // if defined
-                .clientKey(getString(R.string.back4app_client_key))
-                .server(getString(R.string.back4app_server_url))
-                .build()
-        )
+        setContentView(R.layout.activity_main)
 
-
-
-        val myFirstClass = ParseObject("MyFirstClass")
-        myFirstClass.put("name", "I'm able to save objects!")
-        myFirstClass.saveInBackground()
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        supportFragmentManager.currentNavigationFragment?.onActivityResult(
+            requestCode,
+            resultCode,
+            data
+        )
+    }
+        /**
+         * Function is called from back buttons in fragments.
+         */
+        fun goBack() {
+            onBackPressed()
+        }
 }

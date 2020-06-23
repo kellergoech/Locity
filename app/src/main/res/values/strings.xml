@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">Locity</string>
+ <!--  <string name="app_name">Locity</string>-->
 
-    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
-    <!-- Change the following strings as required -->
+  <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+  <!-- Change the following strings as required -->
     <string name="back4app_app_id">nGedAi8aKNWt6JAi6OkXuqWI8eyQwRCcVz9ZQMM1</string>
     <string name="back4app_client_key">XFUadmf5Upl23CUjuvuYzvDLW6t29pxvKMfgS4MX</string>
+    <string name="main_title">Zwoenitz App</string>
+
+    <string name="main_header">Hauptseite</string>
+    <string name="news_main">Neue Nachrichten</string>
+
+    <string name="test_button">Test Button</string>
 </resources>

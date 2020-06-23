@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_Fragment">
+
+    <fragment
+        android:id="@+id/main_Fragment"
+        android:name="de.zw.locity.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" />
+</navigation>
