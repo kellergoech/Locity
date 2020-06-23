@@ -1,16 +1,20 @@
-package de.zw.locity
+package de.zw.locity.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-
+import de.zw.locity.MainViewModel
 import de.zw.locity.databinding.MainFragmentBinding
 
 
+import de.zw.locity.R
+
+
 class MainFragment : Fragment() {
+
 
     companion object {
         private val TAG: String? = MainFragment::class.simpleName
@@ -20,6 +24,7 @@ class MainFragment : Fragment() {
     private val binding: MainFragmentBinding get() = _binding!!
 
     private lateinit var viewModel: MainViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,15 +44,18 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setButtonOnClickListener()
-        setContentDescription()
+        setRecycleAdapter()
     }
 
-    private fun setContentDescription() {
+    private fun setRecycleAdapter(){
 
     }
 
     private fun setButtonOnClickListener() {
         binding.testButton.setOnClickListener{
-            mainViewModel.addanewclasstoDatabase()}
+            mainViewModel.addNewClasstoDatabse()}
+
+        binding.mainNews.setOnClickListener{
+            mainViewModel.searchDatabase()}
     }
 }

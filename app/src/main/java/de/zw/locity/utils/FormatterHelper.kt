@@ -1,12 +1,13 @@
 @file:JvmName("FormatterHelper")
 
-package de.zw.locity
+package de.zw.locity.utils
 
 import android.graphics.drawable.Drawable
 import android.text.Spanned
 import android.view.View
 import androidx.core.text.HtmlCompat
 import de.zw.locity.R
+import de.zw.locity.ZwoenitzApplication
 
 /*Style*/
 /**
@@ -78,7 +79,8 @@ fun formatVisibilityIcon(drawable: Any?): Int? {
  * @param value
  * @return
  */
-fun formatVisibilityInverted(value: Boolean): Int = formatVisibility(!value)
+fun formatVisibilityInverted(value: Boolean): Int =
+    formatVisibility(!value)
 
 /**
  * Formats visibility of item if valid text is provided
@@ -86,7 +88,8 @@ fun formatVisibilityInverted(value: Boolean): Int = formatVisibility(!value)
  * @param text
  * @return
  */
-fun formatVisibilityText(text: String?): Int = formatVisibility(text != null && text != "")
+fun formatVisibilityText(text: String?): Int =
+    formatVisibility(text != null && text != "")
 
 /**
  * Formats visibility of item if valid spannable is provided
@@ -94,7 +97,8 @@ fun formatVisibilityText(text: String?): Int = formatVisibility(text != null && 
  * @param text
  * @return
  */
-fun formatVisibilityText(text: CharSequence?): Int = formatVisibility(text != null && text != "")
+fun formatVisibilityText(text: CharSequence?): Int =
+    formatVisibility(text != null && text != "")
 
 /*Text*/
 /**

@@ -1,4 +1,4 @@
-package de.zw.locity
+package de.zw.locity.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

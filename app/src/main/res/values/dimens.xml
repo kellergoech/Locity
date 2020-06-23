@@ -15,6 +15,8 @@
 
     <!-- font sizes -->
     <dimen name="font_button">14sp</dimen>
+    <dimen name="font_headline">18sp</dimen>
+    <dimen name="font_article">12sp</dimen>
 
     <dimen name="match_constraint">0dp</dimen>
 
@@ -32,4 +34,7 @@
     <dimen name="button_padding_start_end">@dimen/spacing_normal</dimen>
     <dimen name="button_padding_top_bottom">@dimen/spacing_small</dimen>
     <dimen name="button_icon_margin">8dp</dimen>
+
+    <!-- picture size -->
+    <dimen name="article_preview_picture_size">80dp</dimen>
 </resources>

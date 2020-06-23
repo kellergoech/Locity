@@ -1,0 +1,70 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="optionID"
+            type="Integer" />
+        <variable
+            name="mainViewModel"
+            type="de.zw.locity.MainViewModel" />
+    </data>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> mainViewModel.toggle(optionID)}">
+
+                <ImageView
+                    android:id="@+id/cardview_Pic"
+                    android:layout_width="@dimen/article_preview_picture_size"
+                    android:layout_height="@dimen/article_preview_picture_size"
+                    android:layout_marginBottom="@dimen/spacing_tiny"
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginTop="@dimen/spacing_tiny"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <!--          app:avatar="@{mainViewModel.Article.Id}"  -->
+                <TextView
+                    android:id="@+id/cardview_Headline"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardview_Pic"
+                    android:layout_marginEnd="@dimen/spacing_tiny"
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginTop="@dimen/spacing_tiny"
+                    android:padding="@dimen/spacing_tiny"
+
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_headline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_Pic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text=""/>
+                <!--android:text="@{safeUnbox(mainViewModel.Article.headline)}"
+                 android:text="@{Integer.toString(safeUnbox(optionID))}"-->
+                <TextView
+                    android:id="@+id/cardview_Text"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardview_Headline"
+                    android:layout_marginEnd="@dimen/spacing_tiny"
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginTop="@dimen/spacing_mega_tiny"
+                    android:padding="@dimen/spacing_mega_tiny"
+
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/font_article"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_Pic"
+                    app:layout_constraintTop_toBottomOf="@+id/cardview_Headline"
+                    tools:text=""/>
+             <!--   android:text="@{Integer.toString(safeUnbox(optionID))}"
+             android:text="@{safeUnbox(mainViewModel.Article.articletext)}" -->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
