@@ -10,9 +10,14 @@ import android.view.WindowManager
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.ProcessLifecycleOwner
 import timber.log.Timber
 import com.parse.Parse
 import de.zw.locity.R
+
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
+import java.security.Security
 
 class ZwoenitzApplication : Application(), LifecycleObserver,
     Application.ActivityLifecycleCallbacks {
@@ -36,6 +41,9 @@ class ZwoenitzApplication : Application(), LifecycleObserver,
         super.onCreate()
         instance = this
 
+        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+        registerActivityLifecycleCallbacks(this)
+
         //initialize parse -> maybe external class later on?
         Parse.initialize(
             Parse.Configuration.Builder(this)
@@ -47,6 +55,10 @@ class ZwoenitzApplication : Application(), LifecycleObserver,
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
+        }
+
+        startKoin {
+            androidContext(this@ZwoenitzApplication)
         }
     }
 

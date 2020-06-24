@@ -1,30 +1,45 @@
 package de.zw.locity
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import de.zw.locity.utils.ParseDataType
+import com.parse.FindCallback
+import com.parse.ParseObject
+import com.parse.ParseQuery
+import timber.log.Timber
+import de.zw.locity.utils.Article
 
-class MainViewModel : ViewModel(){
+
+class MainViewModel() : ViewModel(){
     //data class
-    
+    private val TAG: String? = MainViewModel::class.simpleName
 
-    private val _selectedID = MutableLiveData<Int>()
-    val selectedID: LiveData<Int> = _selectedID
+    private val _data = MutableLiveData<List<Article>>()
+    val data: LiveData<List<Article>>
+        get() = _data
 
-    init {
-        _selectedID.value = 1
-    }
 
     fun addNewClasstoDatabse(){
-        ParseDataType.addNewClasstoDatabse()
+        val myFirstClass = ParseObject("MyFirstClass")
+        myFirstClass.put("name", "First Button generated entry")
+        myFirstClass.saveInBackground()
     }
 
-    fun searchDatabase(){
+    fun <T> querryArticles(vararg channels: T): List<Article> {
+        var result = ArrayList<Article>()
+        val parseQuery = ParseQuery<ParseObject>("Post")
 
+        parseQuery.findInBackground(FindCallback<ParseObject>{ scoreList, e ->
+            if (e == null) {
+                Timber.d("score Retrieved %s scores", scoreList.size)
+                Log.d("Daten", scoreList.toString())
+            } else {
+
+                Timber.d("score Error: %s", e.message)
+            }
+        })
+        return result
     }
 
-    fun toggle(optionID : Int){
-        _selectedID.value = optionID
-    }
 }
