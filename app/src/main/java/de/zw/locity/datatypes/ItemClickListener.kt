@@ -1,4 +1,4 @@
-package de.zw.locity.utils
+package de.zw.locity.datatypes
 
 interface ItemClickListener<I> {
     fun onClickListener(item: I)

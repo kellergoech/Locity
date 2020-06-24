@@ -15,10 +15,6 @@ import timber.log.Timber
 import com.parse.Parse
 import de.zw.locity.R
 
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
-import java.security.Security
-
 class ZwoenitzApplication : Application(), LifecycleObserver,
     Application.ActivityLifecycleCallbacks {
 
@@ -55,10 +51,6 @@ class ZwoenitzApplication : Application(), LifecycleObserver,
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-        }
-
-        startKoin {
-            androidContext(this@ZwoenitzApplication)
         }
     }
 

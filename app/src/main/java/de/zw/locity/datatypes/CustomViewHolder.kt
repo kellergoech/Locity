@@ -1,4 +1,4 @@
-package de.zw.locity.utils
+package de.zw.locity.datatypes
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

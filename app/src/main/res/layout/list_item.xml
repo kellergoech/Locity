@@ -6,7 +6,7 @@
         <import type="androidx.core.content.ContextCompat" />
         <variable
             name="Article"
-            type="de.zw.locity.utils.Article" />
+            type="de.zw.locity.datatypes.Article" />
     </data>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,12 +22,10 @@
                     android:layout_marginTop="@dimen/spacing_tiny"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:scaleType="fitXY"
-                    android:src="@{ContextCompat.getDrawable(context, Article.pictNumb)}"
+                    app:Bitmap="@{Article.picture}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
-
-                <!--          app:avatar="@{mainViewModel.Article.Id}"  -->
                 <TextView
                     android:id="@+id/cardview_Headline"
                     android:layout_width="@dimen/match_constraint"

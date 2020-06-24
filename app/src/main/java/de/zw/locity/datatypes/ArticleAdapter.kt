@@ -1,4 +1,4 @@
-package de.zw.locity.utils
+package de.zw.locity.datatypes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.zw.locity.databinding.ListItemBinding
 
-class ArticleAdapter(val listener: ItemClickListener<Article>) : ListAdapter<Article, CustomViewHolder>(Companion) {
+class ArticleAdapter(val listener: ItemClickListener<Article>) : ListAdapter<Article, CustomViewHolder>(
+    Companion
+) {
     companion object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return  oldItem === newItem

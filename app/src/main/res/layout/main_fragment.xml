@@ -10,7 +10,7 @@
 
         <variable
             name="adapter"
-            type="de.zw.locity.utils.ArticleAdapter" />
+            type="de.zw.locity.datatypes.ArticleAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
