@@ -15,11 +15,6 @@ class MainViewModel() : ViewModel(){
     //data class
     private val TAG: String? = MainViewModel::class.simpleName
 
-    private val _data = MutableLiveData<List<Article>>()
-    val data: LiveData<List<Article>>
-        get() = _data
-
-
     fun addNewClasstoDatabse(){
         val myFirstClass = ParseObject("MyFirstClass")
         myFirstClass.put("name", "First Button generated entry")
