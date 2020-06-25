@@ -65,7 +65,7 @@ class MainFragment : Fragment() {
         binding.testButton.setOnClickListener{
             mainViewModel.addNewClasstoDatabse()}
     }
-    
+
     fun loadData(){
         TODO("move data handling from fragment to repository and add main view Holder")
     }
@@ -90,7 +90,7 @@ class MainFragment : Fragment() {
                     }
 
                     var bmp = BitmapFactory.decodeResource(activity?.getResources(),
-                    R.drawable.book);
+                    R.drawable.book)
 
                     if (parsearticle.get("picture") != null){
                         val parseFile = parsearticle.getParseFile("picture")
