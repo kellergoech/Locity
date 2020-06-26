@@ -12,8 +12,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import timber.log.Timber
-import com.parse.Parse
-import de.zw.locity.R
+import de.zw.locity.actions.ParseDataRepository
 
 class ZwoenitzApplication : Application(), LifecycleObserver,
     Application.ActivityLifecycleCallbacks {
@@ -40,13 +39,11 @@ class ZwoenitzApplication : Application(), LifecycleObserver,
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
         registerActivityLifecycleCallbacks(this)
 
-        //initialize parse -> maybe external class later on?
-        Parse.initialize(
-            Parse.Configuration.Builder(this)
-                .applicationId(getString(R.string.back4app_app_id)) // if defined
-                .clientKey(getString(R.string.back4app_client_key))
-                .server(getString(R.string.back4app_server_url))
-                .build()
+        //start parse client
+        ParseDataRepository.initParse(this,
+            getString(R.string.back4app_app_id),
+            getString(R.string.back4app_client_key),
+            getString(R.string.back4app_server_url)
         )
 
         if (BuildConfig.DEBUG) {
@@ -101,12 +98,10 @@ class ZwoenitzApplication : Application(), LifecycleObserver,
                 WindowManager.LayoutParams.FLAG_SECURE
             )
         }
-
         // set screen orientation to portrait
         activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT
     }
 
     override fun onActivityResumed(activity: Activity) {
-
     }
 }
