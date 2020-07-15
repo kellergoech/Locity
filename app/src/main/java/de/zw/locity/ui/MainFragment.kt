@@ -45,9 +45,13 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        TODO("add viemodelfactory and inject to be able to retrigger view from other activities " +
-                "and save data in viewmodel instead of mainfragment/repository" +
-                "see kotlin data binding project and Dagger 2 descirption")
+        if (false) {
+            TODO(
+                "add viemodelfactory and inject to be able to retrigger view from other activities " +
+                        "and save data in viewmodel instead of mainfragment/repository" +
+                        "see kotlin data binding project and Dagger 2 descirption"
+            )
+        }
     }
 
     override fun onDestroyView() {
